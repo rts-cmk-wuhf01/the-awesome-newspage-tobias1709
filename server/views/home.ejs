@@ -362,7 +362,11 @@
                                 <a href="#" class="post-title">
                                     <h6>Pellentesque mattis arcu massa, nec fringilla turpis eleifend id.</h6>
                                 </a>
-                                <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
+                                
+                                <p class="post-date">
+                                    <% let now = new Date('2019-04-14 09:00:00'); %>
+                                    <%= dateAndTime.format(now, 'h:mm A | MMMM DD | YYYY') %>
+                                </p>
                             </div>
                         </div>
                     </div>

@@ -70,3 +70,7 @@
     });
 
 })(jQuery);
+
+document.addEventListener('DOMContentLoaded', () => {
+    
+});
