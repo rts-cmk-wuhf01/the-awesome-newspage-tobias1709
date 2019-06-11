@@ -1,18 +1,29 @@
+const mysql = require('../config/mysql');
+
 module.exports = (app) => {
 
-   app.get('/', (req, res, next) => {
-      res.render('home');
-   });
 
-   app.get('/database', async (req, res, next) => {
-
+   app.get('/', async(req, res, next) => {
       let db = await mysql.connect();
-      let [product] = await db.execute('SELECT * FROM product');
+      // let [breakingnewsdk] = await db.execute("SELECT * FROM breakingnewsdk")
+      // let [breakingnewsen] = await db.execute("SELECT * FROM breakingnewsen")
+      // let [topnews] = await db.execute("SELECT * FROM topnews")
       db.end();
-
-      res.render('product'), {
-         'product': product
-      }
+      
+      res.render('home', {
+         // "topnews": topnews,
+         // "breakingnewsdk": breakingnewsdk,
+         // "breakingnewsen": breakingnewsen
+      });
    });
 
+   app.get('/category', async(req, res, next) => {
+      let db = await mysql.connect();
+      let [categories] = await db.execute("SELECT * FROM categories");
+      console.log(categories);
+      db.end();
+      
+      res.render('categories_post', {
+      });
+   });
 };
