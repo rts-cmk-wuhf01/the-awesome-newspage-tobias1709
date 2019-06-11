@@ -21,12 +21,7 @@ app.set('view engine', 'ejs');
 // peg på den mappe hvor alle views filerne er placeret
 app.set('views', './server/views');
 
-const date = require('date-and-time');
-
-let now = new Date(); 
-
-date.format(now, 'h:mm A | MMMM DD');
-
+//npm install data-and-time --save
 app.locals.dateAndTime = require('date-and-time');
 
 /* indlæs alle de routes serveren skal håndtere

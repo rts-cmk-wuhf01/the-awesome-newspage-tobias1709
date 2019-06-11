@@ -1,0 +1,21 @@
+<h3>Latest Comments</h3>
+
+<% if(typeof latestComments != "undefined"){ %>
+    <% latestComments.forEach(comment =>{ %>
+    <% let commentDate = new Date(comment.date) %>
+    
+    
+    <!-- Single Comments -->
+    <div class="single-comments d-flex">
+        <div class="comments-thumbnail mr-15">
+            <img src=<%= comment.image  %> alt="">
+        </div>
+        <div class="comments-text">
+            <a href="#"><%= comment.name %> <span>on</span> <%= comment.text %></a>
+            <p><%= dateAndTime.format(commentDate, " DD MMM, hh:mm A, YYYY") %></p>
+        </div>
+    </div>
+    
+    <% }) %>
+    <% } %>
+<!-- Single Comments -->

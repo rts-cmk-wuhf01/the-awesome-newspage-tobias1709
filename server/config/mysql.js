@@ -1,13 +1,13 @@
-const mysql = require('mysql2/promise'); // mysql
+const mysql = require('mysql2/promise'); // rettet: mysql2/promise
 
 module.exports = {
-   connect: async function () {
-      return await mysql.createConnection({
+   connect: async function () { // tilføjet: async
+      return await mysql.createConnection({ // tilføjet: await
          host: 'localhost',
-         user: '',
+         user: 'root',
          password: '',
          port: '3306',
-         database: 'testDatabase'
-      })
+         database: 'newspage'
+      });
    }
 }
