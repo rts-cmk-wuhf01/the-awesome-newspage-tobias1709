@@ -16,7 +16,7 @@ app.use(logger('dev', {
 
 
 
-// sæt viewengine til ejs 
+//+ sæt viewengine til ejs 
 app.set('view engine', 'ejs');
 // peg på den mappe hvor alle views filerne er placeret
 app.set('views', './server/views');
